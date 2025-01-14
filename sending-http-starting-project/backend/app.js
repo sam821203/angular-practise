@@ -21,8 +21,6 @@ app.use((req, res, next) => {
 app.get("/places", async (req, res) => {
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  // return res.status(500).json();
-
   const fileContent = await fs.readFile("./data/places.json");
   const placesData = JSON.parse(fileContent);
 
@@ -64,6 +62,8 @@ app.put("/user-places", async (req, res) => {
 
 app.delete("/user-places/:id", async (req, res) => {
   const placeId = req.params.id;
+
+  // return res.status(500).json();
 
   const userPlacesFileContent = await fs.readFile("./data/user-places.json");
   const userPlacesData = JSON.parse(userPlacesFileContent);
