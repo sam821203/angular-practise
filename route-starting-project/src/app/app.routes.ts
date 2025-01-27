@@ -6,7 +6,6 @@ import {
   UserTasksComponent,
 } from './users/user-tasks/user-tasks.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { routes as userRoutes } from './users/users.routes';
 import { inject } from '@angular/core';
 
 const dummyCanMatch: CanMatchFn = (route, segments) => {
@@ -30,7 +29,8 @@ export const routes: Routes = [
   {
     path: 'users/:userId',
     component: UserTasksComponent,
-    children: userRoutes,
+    loadChildren: () =>
+      import('./users/users.routes').then((module) => module.routes),
     canMatch: [dummyCanMatch],
     data: {
       message: 'hello',
