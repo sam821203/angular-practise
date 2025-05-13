@@ -6,7 +6,9 @@ import { Donut } from '../../models/donut.model';
   encapsulation: ViewEncapsulation.ShadowDom,
   template: ` <div
     class="donut-card"
-    [style.border]="donut.promo ? '2px solid #eee;' : 'none'"
+    [ngClass]="{
+      'donut-card-promo': donut.promo
+    }"
   >
     <img
       src="/assets/img/{{ donut.icon }}.svg"
@@ -18,7 +20,7 @@ import { Donut } from '../../models/donut.model';
         <div>{{ donut.name }}</div>
       </div>
       <div class="donut-card-price">
-        <div>{{ donut.price }}</div>
+        <div>{{ donut.price / 100 | currency : 'USD' : 'symbol' }}</div>
       </div>
     </div>
   </div>`,
@@ -34,6 +36,9 @@ import { Donut } from '../../models/donut.model';
         transition: transform 0.2s ease-in-out;
         &:hover {
           transform: translate(-3px);
+        }
+        &-promo {
+          border: 2px solid #eee;
         }
         &-name {
           font-size: 16px;
