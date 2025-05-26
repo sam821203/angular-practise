@@ -4,8 +4,9 @@ import { Donut } from '../../models/donut.model';
 @Component({
   selector: 'donut-card',
   encapsulation: ViewEncapsulation.ShadowDom,
-  template: ` <div
+  template: ` <a
     class="donut-card"
+    [routerLink]="donut.id"
     [ngClass]="{
       'donut-card-promo': donut.promo
     }"
@@ -30,7 +31,7 @@ import { Donut } from '../../models/donut.model';
         <div>{{ donut.price / 100 | currency : 'USD' : 'symbol' }}</div>
       </div>
     </div>
-  </div>`,
+  </a>`,
   styles: [
     `
       .donut-card {

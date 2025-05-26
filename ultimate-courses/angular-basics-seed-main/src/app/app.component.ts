@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
         <img src="/assets/img/logo.svg" alt="Ultimate Donuts" />
       </header>
       <!-- <donut-list></donut-list> -->
-      <donut-single></donut-single>
+      <!-- <donut-single></donut-single> -->
+      <router-outlet></router-outlet>
     </div>
   `,
   styles: [
