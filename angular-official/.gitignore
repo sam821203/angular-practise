@@ -1,0 +1,48 @@
+# 依賴
+node_modules/
+package-lock.json
+
+# VS Code 編輯器設定
+.vscode/
+
+# 編譯結果
+dist/
+out-tsc/
+tmp/
+build/
+
+# 測試輸出
+coverage/
+karma-results/
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# Angular CLI & IDE 產生的檔案
+.angular/
+.sass-cache/
+.cache/
+.husky/_/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 環境設定檔（依需求）
+.env
+.env.local
+.env.*.local
+
+# IDE/編輯器雜項
+.idea/
+*.iml
+*.swp
+
+# macOS 資源回收筒
+.Trashes
+
+# json-server 產生的資料庫快照
+db.json.tmp
